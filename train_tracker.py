@@ -4,7 +4,7 @@ from datetime import datetime
 import pytz
 
 class TrainTrackerSkill:
-    def init(self):
+    def __init__(self):
         self.api_key = os.getenv("YANDEX_API_KEY")
         self.url = "https://api.rasp.yandex.net/v3.0/search/"
         self.station_from = 's9601666'
