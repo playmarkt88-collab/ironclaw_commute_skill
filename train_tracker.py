@@ -7,7 +7,7 @@ class TrainTrackerSkill:
     def __init__(self):
         self.api_key = os.getenv("YANDEX_API_KEY")
         self.url = "https://api.rasp.yandex.net/v3.0/search/"
-        self.station_from = 's9601666'
+        self.station_from = 's9601741'
         self.station_to = 's9602028'
         self.tz_moscow = pytz.timezone('Europe/Moscow')
 
@@ -38,7 +38,7 @@ class TrainTrackerSkill:
             if not upcoming:
                 return "🤷‍♂️ На ближайшее время электричек больше нет."
                 
-            msg = "🚉 Ближайшие электрички: Булатниково ➔ Москва-Товарная\n"
+            msg = "🚉 Ближайшие электрички: Булатниково ➔ Дербеневская\n"
             for t in upcoming:
                 dept = t['departure'].split('T')[1][:5]
                 arr = t['arrival'].split('T')[1][:5]
